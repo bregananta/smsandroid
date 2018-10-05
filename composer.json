@@ -1,0 +1,29 @@
+{
+    "name": "bregananta/smsandroid",
+    "description": "Wrapper of smsandroid for Laravel",
+    "type": "api wrapper",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kunto Bregananta Adi",
+            "email": "bregananta@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "guzzlehttp/guzzle": "^6.3@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bregananta\\SmsAndroid\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bregananta\\SmsAndroid\\SmsAndroidServiceProvider"
+            ]
+        }
+    }
+}
