@@ -1,7 +1,7 @@
 {
     "name": "bregananta/smsandroid",
     "description": "Wrapper of smsandroid for Laravel",
-    "type": "api wrapper",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
@@ -10,6 +10,7 @@
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "guzzlehttp/guzzle": "^6.3@dev"
     },
