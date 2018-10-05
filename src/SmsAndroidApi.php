@@ -50,16 +50,14 @@ class SmsAndroidApi {
 
 		try {
 			$response = $this->http->post($this->endpoint, [
-				'headers' => ['Content-Type' => 'multipart/form-data'],
-				'body' => json_encode($params)
+				'form_params' => $params
 			]);
 
 			$response = \json_decode((string) $response->getBody(), true);
 
-			if (isset($response['error'])) {
-				throw new \DomainException($response['error'], $response['error_code']);
+			if ($response['success']==false) {
+				throw new \DomainException($response['error']);
 			}
-
 		} catch (ClientException $exception) {
 			throw CouldNotSendNotification::smsAndroidRespondedWithAnError($exception);
 		} catch (\Exception $exception) {
